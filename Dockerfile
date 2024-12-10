@@ -1,10 +1,12 @@
-FROM python:3.12.7
+FROM python:3.12.7-slim
 
-COPY requirements.txt .
+WORKDIR /chatbot
 
-RUN pip install -r requirements.txt 
+RUN  pip install --no-cache-dir -r /chatbot/requirements.txt 
 
-COPY . . 
+COPY /chatbot/app.py .
 
-CMD python app.py 
+EXPOSE 7860
+
+CMD ["python", "app.py"]
 
