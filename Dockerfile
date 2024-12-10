@@ -1,10 +1,10 @@
 FROM python:3.12.7-slim
 
-WORKDIR /chatbot
+WORKDIR /chatbot_api
 
-RUN  pip install --no-cache-dir -r /chatbot/requirements.txt 
+RUN  pip install --no-cache-dir -r /chatbot_api/requirements.txt 
 
-COPY /chatbot/app.py .
+COPY /chatbot_api/app.py .
 
 EXPOSE 7860
 
